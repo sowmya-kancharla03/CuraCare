@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# 🏥 CuraCare — Hospital Appointment Booking System (MERN Stack)
 
-## Project info
+CuraCare is a full-stack healthcare management web application designed to simplify patient–doctor interactions. It enables patients to book appointments online, consult doctors digitally, and manage their medical consultations efficiently. The platform offers secure authentication, role-based dashboards, and an intuitive interface for all users.
 
-**URL**: https://lovable.dev/projects/829fc136-087b-404d-821f-3e6c637e372c
+---
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- 👩‍⚕️ **Role-based Access:** Separate interfaces for Admins, Doctors, and Patients  
+- 📅 **Appointment Booking:** Patients can book, reschedule, or cancel appointments  
+- 🩺 **Doctor Management:** Doctors can manage their availability and consultations  
+- 🔒 **Secure Authentication:** JWT-based login and route protection  
+- 📨 **Notifications:** Real-time updates for appointments and approvals  
+- 📊 **Admin Dashboard:** Admins can monitor system activity and user accounts  
+- 🧠 **Responsive Design:** Works seamlessly on desktop and mobile devices  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/829fc136-087b-404d-821f-3e6c637e372c) and start prompting.
+## 🧩 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+**Frontend:** React.js, HTML5, CSS3, JavaScript, Axios  
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB Atlas (Mongoose ORM)  
+**Authentication:** JSON Web Tokens (JWT), bcrypt.js  
+**Hosting:** Render / Vercel / AWS  
 
-**Use your preferred IDE**
+---
+## ⚙️ Installation and Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Follow these steps to run the project locally:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/CuraCare.git
+```
+### 2. Navigate into the project folder
+```bash
+cd CuraCare
+```
+### 3. Install dependencies for both backend and frontend
+```bash
+# Install server dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Move to client directory and install frontend dependencies
+cd client
+npm install
 ```
 
-**Edit a file directly in GitHub**
+### 4. Set up Environment Variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a .env file in the root directory and add:
+```
+MONGO_URI = your_mongodb_connection_string
+JWT_SECRET = your_jwt_secret
+PORT = 5000
+```
+### 5. Run the Application
 
-**Use GitHub Codespaces**
+In the root folder:
+```bash
+# Run both frontend and backend together (if using concurrently)
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# OR run individually
+npm run server     # for backend
+npm start          # inside client folder for frontend
+```
 
-## What technologies are used for this project?
+The app will run at:
+```bash
+👉 http://localhost:3000 (Frontend)
+👉 http://localhost:5000 (Backend)
+```
+---
 
-This project is built with:
+## 📦 Folder Structure
+```bash
+CuraCare/
+│
+├── client/              # React frontend
+├── models/              # Mongoose schemas (User, Doctor, Appointment)
+├── routes/              # Express routes and APIs
+├── middleware/          # Auth and role-based access middleware
+├── controllers/         # Business logic for routes
+├── config/              # Database and server config files
+└── server.js            # Entry point for backend
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🔐 Security Features
 
-Simply open [Lovable](https://lovable.dev/projects/829fc136-087b-404d-821f-3e6c637e372c) and click on Share -> Publish.
+JWT-based authentication for secure access
 
-## Can I connect a custom domain to my Lovable project?
+Password encryption using bcrypt.js
 
-Yes, you can!
+Protected API routes for doctors, patients, and admins
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Role-based middleware for data access control
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 💡 Future Enhancements
+
+📞 Telemedicine integration (video consultations)
+
+💳 Online payment gateway
+
+📈 Doctor and admin analytics dashboard
+
+🏥 Electronic Health Records (EHR) integration
